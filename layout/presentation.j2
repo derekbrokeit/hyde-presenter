@@ -1,0 +1,49 @@
+{% extends "base.j2" %}
+{% block body %}
+<!-- 
+this class is automatically added by impress, but is useful here
+in case the user does not have javascript enabled 
+-->
+<body class="impress-not-supported">
+    <!--  Warn the user if they are not getting the full experience -->
+    <div class="fallback-message">
+        <p>
+            Your browser <b>doesn't support the features required</b> by
+            impress.js, so you are presented with a simplified version
+            of this presentation.
+        </p>
+        <p>
+            For the best experience please use the latest <b>Chrome</b>,
+            <b>Safari</b> or <b>Firefox</b> browser.
+        </p>
+    </div>
+
+    <!-- begin the presentation -->
+    <div id="impress">
+{% filter impress %}
+{% block slides %}
+{% endblock slides %}
+{% endfilter %}
+    </div>
+    <!-- end the presentation -->
+
+    <!-- you can give the user a hint as to how to proceed -->
+    <div class="hint">
+        <p>Use a spacebar or arrow keys to navigate</p>
+    </div>
+    <script>
+    if ("ontouchstart" in document.documentElement) { 
+        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+    }
+    </script>
+
+    <!-- load up impress and initiate the presentation -->
+    <script src="{{media_url('js/libs/impress.js')}}"></script>
+    <script>impress().init();</script>
+</body>
+{% endblock body %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ media_url('css/impress.css') }}">
+{% endblock css %}
+
