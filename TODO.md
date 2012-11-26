@@ -2,6 +2,8 @@
 
 ## Must have's before submitting pull request
 
+* Look at BlockDown plugin for help in figuring some of this out. It
+  seems a textyplugin is the best way at accomplishing this problem
 * abstract so it can be used in any situation beyond impress.js
 * build generic example as index.html
 * make the filter act as a jinja tag
@@ -30,6 +32,8 @@
 
     This can work like a config `enumerated_id: "div-%d"` and then later used
     as `enumerated_id % slide_idx`
+
+* allow variable structure type: "header", "section", "article", "div", etc...
 
 ## Things to consider, but not necessary
 
