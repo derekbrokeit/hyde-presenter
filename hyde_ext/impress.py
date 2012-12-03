@@ -119,7 +119,7 @@ class Presentation(HTMLStructure):
 
         i = 0
         text = self.raw_text
-        is_impress = (id == "impress") # take precautions to check if this is for impress.js
+        is_impress = (self.meta["id"] == "impress") # take precautions to check if this is for impress.js
         general_input = {"is_impress":is_impress, "element":self.inner_element,
                 "id_N":self.id_N, "class_N":self.class_N, "filter":self.filter,
                 "env": self.env}
