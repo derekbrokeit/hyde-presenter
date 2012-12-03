@@ -3,6 +3,8 @@
 ## Must have's before submitting pull request
 
 * build generic example as index.html
+* build personal version of impress.js to show off the capabilities
+  of this technique
 
 ### Things to consider, but not necessary
 
