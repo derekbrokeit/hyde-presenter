@@ -7,7 +7,7 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
-    - hyde_ext.impress.PresenterPlugin
+    - hyde_ext.presenter.PresenterPlugin
 context:
     data:
         tweet_via: scicalculator
@@ -16,14 +16,6 @@ meta:
     created: !!timestamp 2010-01-01 00:00:00
     author: Derek Ashley Thomas
     charset: utf-8
-sorter:
-    time:
-        attr:
-            - meta.created
-        reverse: true
-        filters:
-            source.kind: html
-            meta.listable: true
 presenter:
     filter: markdown      # filter used to parse each section, defaults to None
     # outer_element: div  # the element for the surrounding structure
