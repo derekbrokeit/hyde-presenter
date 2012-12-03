@@ -7,7 +7,7 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
-    - hyde_ext.impress.ImpressPlugin
+    - hyde_ext.impress.PresenterPlugin
 context:
     data:
         tweet_via: scicalculator
@@ -24,16 +24,13 @@ sorter:
         filters:
             source.kind: html
             meta.listable: true
-tagger:
-    sorter: time
-    archives:
-        blog:
-            source: blog
-            target: blog/tags
-            template: tagged_posts.j2
-            archive_extension: html
-            meta:
-                listable: false
-impress:
-    filter: markdown
+presenter:
+    filter: markdown      # filter used to parse each section, defaults to None
+    # outer_element: div  # the element for the surrounding structure
+    # element: article    # the default element type, defaults to 'div'
+    # id_N: slide-%d      # numbered element id's
+    # class_N: class-%d   # numbered class id's
+
+    # These settings can also be set per resource. Plus, each element
+    # can be customized with it's own yaml-matter
 

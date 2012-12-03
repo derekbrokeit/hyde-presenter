@@ -2,15 +2,24 @@
 
 ## Must have's before submitting pull request
 
+* build generic example as index.html
+
+### Things to consider, but not necessary
+
+# Done:
+
 * Look at BlockDown plugin for help in figuring some of this out. It
   seems a textyplugin is the best way at accomplishing this problem
 * abstract so it can be used in any situation beyond impress.js
-* build generic example as index.html
 * make the filter act as a jinja tag
 
-    I want to use it like: {% diverate %}{% end diverate %}
+    I want to use it like: `{% diverate title %}{% end diverate %}`
+    to become `<div id="title"></div>`
 
-* allow variable length separators. I am considering:
+    It might be good to have `{% diverate title %}{% end diverate %}P
+    translate to  `<div id="title">{%block title %}{% endblock %}</div>
+
+* allow variable length separators. I am considering: (plus sign means continued)
 
     1. `=+-+=+`
     2. `\-+\`
@@ -34,15 +43,12 @@
     as `enumerated_id % slide_idx`
 
 * allow variable structure type: "header", "section", "article", "div", etc...
-
-## Things to consider, but not necessary
-
-* consider changing "Slide" name to something more generic, but slide is
-  not bad
 * consider seperating yaml front matter by only the bottom `---` instead
   of a cage. This way you have N less lines in your text file for N slides/divs.
   One catch: take care to make sure that markdown horizontal rule are not mistakenly
   taken for the yaml-front-matter ending.
 
+# Rejected:
 
-
+* consider changing "Slide" name to something more generic, but slide is
+  not bad

@@ -48,6 +48,8 @@
 </head>
 {% block body %}
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
+    {% block main %}
+    {% endblock %}
 </body>
 {% endblock body %}
 </html>
