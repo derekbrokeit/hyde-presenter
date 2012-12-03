@@ -8,6 +8,8 @@
 
 ### Things to consider, but not necessary
 
+* currently empty because I decided or did them all
+
 # Done:
 
 * Look at BlockDown plugin for help in figuring some of this out. It
