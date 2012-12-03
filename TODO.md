@@ -5,6 +5,7 @@
 * build generic example as index.html
 * build personal version of impress.js to show off the capabilities
   of this technique
+* Try to make '[[[1' markers work in the slide-comment line
 
 ### Things to consider, but not necessary
 
