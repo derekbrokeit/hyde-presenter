@@ -5,8 +5,8 @@ title: Structured site made with ease
 description: A simple way to create beautifully structured sites with hyde
 id_N: class-%d
 ---
-
 blah0
+{% set x = 5 %}
 {% presenter "hello"%}
 …………………………………………… first-test
 
@@ -25,17 +25,32 @@ This is a test article
 what happens?!
 
 ………………………………………………………
-Last slide here
+Last slide here, x must be {{x}}
 
 ………………………………………………………
 {% endpresenter %}
 
 
+<p>
+number of presentations after first: {{resource.pres | length}}
+number of slides after first: {{resource.pres[0].slides | length}}
+</p>
 
 ∂∂ impress
 …………… first
 hello
 ……………
 more
+
+* number of presentations: {{resource.pres | length }}
 ……………
 ∂∂ /impress
+
+<p>
+number of presentations at end: {{resource.pres | length}}
+
+number of slides at end: {{resource.pres[1].slides | length}}
+
+text in first prsentation last slide: 
+<q>{{resource.pres[0].slides[-1].text}}</q>
+</p>

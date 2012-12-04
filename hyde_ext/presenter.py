@@ -276,7 +276,7 @@ def presenter(env, raw_text, id=None, classes=None, resource=None):
 
     # get the resource's presentation list
     try:
-        pres = resource.presentations
+        pres = resource.pres
     except AttributeError:
         resource.pres = []
         pres = resource.pres
@@ -302,7 +302,7 @@ class Presenter(Extension):
         # now we parse a single expression that is used as cache key.
         args = [parser.parse_expression()]
 
-        # if there is a comma, the user provided a timeout.  If not use
+        # if there is a comma, the user provided classes.  If not use
         # None as second parameter.
         if parser.stream.skip_if('comma'):
             args.append(parser.parse_expression())
