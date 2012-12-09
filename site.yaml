@@ -16,13 +16,23 @@ meta:
     created: !!timestamp 2010-01-01 00:00:00
     author: Derek Ashley Thomas
     charset: utf-8
-presenter:
-    filter: markdown      # filter used to parse each section, defaults to None
-    # outer_element: div  # the element for the surrounding structure
-    # element: article    # the default element type, defaults to 'div'
-    # id_N: slide-%d      # numbered element id's
-    # class_N: class-%d   # numbered class id's
 
+presenter:
+    # settings for the presenter plugin
     # These settings can also be set per resource. Plus, each element
     # can be customized with it's own yaml-matter
+    default:
+        # this shows the default behavior, null values can be left out
+        element: div
+        meta: null # meta data are html tag elements
+        slides:
+            filter: null      # filter used to parse each section, defaults to None
+            element: div
+            meta: null
+    impress: # presentation id 'impress'
+        element: div
+        slides:
+            filter: markdown
+            element: div
+            meta: { class: 'step slide-%d' } # example meta data
 
